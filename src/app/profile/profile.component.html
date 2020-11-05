@@ -1,0 +1,68 @@
+<div class="header">
+    <h2>WELCOME</h2>
+
+</div>
+<div class="jumbotron">
+    <h1></h1>
+    <h1>GitHub Finder</h1> <hr> <hr>
+    <h5>This is a web Application that searches and displays GitHub Profiles of github Public users.
+        You can search for Usernames of users and there <br> Github information will be displayed together 
+        with their personal detailes that they have made public at Github</h5>
+    <div class="container">
+        <!-- <app-search></app-search> -->
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                <form (ngSubmit)="searchs(searchName)" #searchForm="ngForm" class="form-inline active-cyan-4">
+                  <input type="text" class="form-control" placeholder="Search github username" [(ngModel)]= "searchName" name="searchName"  #find='ngModel'>
+                  <button class="btn btn-info  btn-sm" type="submit">Search</button>
+                </form>
+              </div>
+              <div class="col-sm-1"></div>
+            </div>
+          </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                            
+                                <img src="{{user.avatar_url}}" alt="">
+                            </div>
+                            <div class="col-ms-5">
+                                <ul class="list-group">
+                                    <li class="list-group-item"> <strong> Name:</strong> <br>{{user.name}}</li>
+                                    <li class="list-group-item"><strong>Number of repos: </strong><br>{{user.public_repos}}</li>
+                                    <li class="list-group-item"><strong>Bio</strong>:<br>{{user.bio}} </li>
+                                    <li class="list-group-item"><strong>Followers:</strong> <br>{{user.followers}}</li>
+                                    <li class="list-group-item"><strong>Following:</strong> <br>{{user.following}}</li>
+                                    <li class="list-group-item"><strong>Joined</strong>: <br>{{user.created_at | dateCount}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h3>Repositories</h3>
+    <div *ngFor="let repo of repos" id="repos" appHighlight>
+        <div class="col-md-6">
+
+        <p>
+            <strong> Repository Name:</strong> {{repo.name}} <a href="{{repo.html_url}}" class="btn btn-sm btn-warning" target="_blank" pull-right>View this on github</a>
+        </p>
+        <p><strong>Description:</strong> {{repo.description}}</p>
+        <p></p>
+         <hr>
+        </div>
+    </div>
+</div>
+<div class="footer">
+<footer>&copy; Copyright  Kelvin Washiko 2020</footer>
+</div>
+
+

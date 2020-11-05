@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Git-Search": {
+    "Gihub-App": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Git-Search",
+            "outputPath": "dist/Gihub-App",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Git-Search:build"
+            "browserTarget": "Gihub-App:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Git-Search:build:production"
+              "browserTarget": "Gihub-App:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Git-Search:build"
+            "browserTarget": "Gihub-App:build"
           }
         },
         "test": {
@@ -110,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Git-Search:serve"
+            "devServerTarget": "Gihub-App:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Git-Search:serve:production"
+              "devServerTarget": "Gihub-App:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Git-Search",
+  "defaultProject": "Gihub-App",
   "cli": {
-    "analytics": "456c8d48-57c1-48a3-8da3-641b9a8d7edc"
+    "analytics": "7e46d3ba-a4cd-4c4c-af9b-f73720420e82"
   }
 }
